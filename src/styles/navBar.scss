@@ -1,6 +1,16 @@
 nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(20, 20, 20);
+    padding: 1rem 0;
     a{
+        color: rgb(229, 229, 229);
         text-decoration: none;
-        color: rgb(218, 38, 38);
+        &:hover{
+            color: rgb(218, 38, 38);
+            text-decoration: underline;
+        }
     }
 }
