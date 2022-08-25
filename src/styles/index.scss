@@ -1,18 +1,20 @@
 //hacer navbar como fragmento
+:root{
+    --blanco: rgb(249, 249, 249);
+    --negro: rgb(15, 15, 15);
+    --naranja: rgba(240, 122, 48, 0.883);
+    --rojo: rgb(254, 59, 59);
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    background-color: rgb(249, 249, 249);
-    color: rgb(15, 15, 15);
-}
-
-div {
-    display: flex;
-    flex-direction: column;
+    background-color: var(--blanco);
+    color: var(--negro);
 }
 
 input {
-    height: 1.5rem;
+    height: 2rem;
     margin: .5rem 0;
     border-radius: 3px;
     border: 1px solid grey;
@@ -22,7 +24,7 @@ input {
 button {
     cursor: pointer;
     padding: .5rem 1rem;
-    background-color: rgb(240, 122, 48);
+    background-color: var(--naranja);
     border: none;
     border-radius: 3px;
 

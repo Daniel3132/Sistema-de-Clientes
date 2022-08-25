@@ -1,40 +1,65 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .addForm {
-    margin: 15% 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 5% 0;
 
     Form {
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        min-width: 10rem;
-        width: 15rem;
+        min-width: 15rem;
+        width: 25rem;
         max-width: 80%;
-        border: 1px solid rgb(249, 64, 64);
         padding: 2rem;
         border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.933);
+        box-shadow: 0px 10px 10px 5px grey;
+
+        h2 {
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
 
         .errorMessage {
             margin: 0;
-            color: rgb(255, 49, 49);
-            font-size: 10px;
+            color: var(--rojo);
         }
 
         div {
+            display: flex;
+            flex-direction: column;
             margin-bottom: .5rem;
 
             label {
                 align-self: flex-start;
-                font-size: 11px;
             }
         }
 
-        .btnLimpiar{
-            padding: .4rem .5rem ;
-            font-size: 9px;
-            background-color: rgb(255, 72, 72);
-            margin: 1rem 0;
-            width: fit-content;
+        .buttons {
+            margin-top: 1rem;
+
+            .btnLimpiar {
+                padding: .4rem .5rem;
+                background-color: var(--rojo);
+                margin: 1rem 0;
+                width: fit-content;
+            }
         }
-        
     }
 
+    .logo {
+        margin: 3rem;
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/1000px-PricewaterhouseCoopers_Logo.svg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 20rem;
+        height: 20rem;
+        box-shadow: 0px 20px 10px -10px rgba(33, 33, 33, 0.32);
+    }
 }
