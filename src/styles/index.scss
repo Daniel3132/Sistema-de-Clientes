@@ -9,8 +9,9 @@
 body {
     margin: 0;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    background-color: var(--blanco);
     color: var(--negro);
+    background-repeat: repeat;
+    background: url('../assets/bg-pattern.png');
 }
 
 input {

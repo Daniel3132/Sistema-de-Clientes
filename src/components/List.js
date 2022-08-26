@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { url } from './helpers/api';
+import { url } from '../helpers/api';
 import '../styles/list.scss'
 
 

@@ -1,7 +1,55 @@
-.dashboard{
+.dashboard {
     margin-top: 3%;
     text-align: center;
-    h2{
-        font-size: 2.5rem;
+
+    .headDash {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 95%;
+        margin: 1rem auto;
+
+        h2 {
+            margin: 0;
+            font-size: 3rem;
+        }
+    }
+
+    h3 {
+        font-size: 3rem;
+        text-decoration: underline;
+    }
+
+    .cardCount {
+        width: fit-content;
+        padding: 2rem;
+        background-color: var(--naranja);
+        font-weight: 600;
+        border-radius: 8px;
+        box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.516);
+
+        h2 {
+            font-weight: 600;
+        }
+        &:hover{
+            transform: rotate3d(10deg);
+        }
+    }
+
+    .graficosC {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .graficaCont {
+            cursor: pointer;
+            margin: 2rem;
+            width: 32rem;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
     }
 }

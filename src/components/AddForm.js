@@ -1,8 +1,8 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik';
 import '../styles/addForm.scss'
-import { SignupSchema } from './helpers/FormValidation';
-import { url } from './helpers/api';
+import { SignupSchema } from '../helpers/FormValidation';
+import { url } from '../helpers/api';
 import Swal from 'sweetalert2';
 
 
