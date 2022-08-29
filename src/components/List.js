@@ -27,7 +27,7 @@ const List = () => {
     { name: 'apellido', displayName: "Apellido", inputFilterable: true, sortable: true },
     { name: 'telefono', displayName: "Telefono", inputFilterable: true, sortable: true },
     { name: 'correo', displayName: "Correo Electronico", inputFilterable: true, sortable: true },
-    { name: 'fecha', displayName: "Fecha de nacimiento", inputFilterable: true, sortable: true }
+    { name: 'fecha', displayName: "Fecha de nacimiento", inputFilterable: true, sortable: true },
   ];
 
 
@@ -45,8 +45,8 @@ const List = () => {
           noRecordsMessage="No hay clientes para mostrar"
           noFilteredRecordsMessage="No se encontró nada referente a la busqueda"
         />
-        
-        </div>
+
+      </div>
     </section>
   )
 }

@@ -46,14 +46,14 @@ const AddForm = () => {
                         <h2>Registro de clientes</h2>
                         <div>
                             <label htmlFor="nombre">Nombre:</label>
-                            <Field name="nombre" type="text" />
+                            <Field name="nombre" type="text" required/>
                             {errors.nombre && touched.nombre ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.nombre}</small>) : null}
                         </div>
 
                         <div>
                             <label htmlFor="apellido">Apellido:</label>
-                            <Field name="apellido" type="text" />
+                            <Field name="apellido" type="text" required />
                             {errors.apellido && touched.apellido ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.apellido}</small>) : null}
 
@@ -61,21 +61,21 @@ const AddForm = () => {
 
                         <div>
                             <label htmlFor="telefono">Telefono:</label>
-                            <Field name="telefono" type="number" />
+                            <Field name="telefono" type="number" required />
                             {errors.telefono && touched.telefono ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.telefono}</small>) : null}
                         </div>
 
                         <div>
                             <label htmlFor="correo">Correo electronico:</label>
-                            <Field name="correo" type="email" />
+                            <Field name="correo" type="email" required />
                             {errors.correo && touched.correo ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.correo}</small>) : null}
                         </div>
 
                         <div>
                             <label htmlFor="fecha">Fecha de nacimiento:</label>
-                            <Field name="fecha" type="date" />
+                            <Field name="fecha" type="date" maxDate={new Date()} required />
                             {errors.fecha && touched.fecha ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.fecha}</small>) : null}
                         </div>
@@ -87,7 +87,7 @@ const AddForm = () => {
                     </Form>
                 )}
             </Formik>
-            <div className="logo"></div>      
+            <div className="logo"></div>
         </section>
     )
 }

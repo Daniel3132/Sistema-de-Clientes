@@ -38,6 +38,14 @@
             }
         }
 
+        input:invalid{
+            box-shadow: 1px 1px 1px 1px rgb(247, 24, 24);
+        }
+
+        input:valid{
+            box-shadow: 1px 1px 1px 1px rgb(57, 205, 20);
+        }
+
         .buttons {
             margin-top: 1rem;
 
