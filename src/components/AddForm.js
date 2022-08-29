@@ -46,7 +46,7 @@ const AddForm = () => {
                         <h2>Registro de clientes</h2>
                         <div>
                             <label htmlFor="nombre">Nombre:</label>
-                            <Field name="nombre" type="text" required/>
+                            <Field name="nombre" type="text" required />
                             {errors.nombre && touched.nombre ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.nombre}</small>) : null}
                         </div>
@@ -75,7 +75,7 @@ const AddForm = () => {
 
                         <div>
                             <label htmlFor="fecha">Fecha de nacimiento:</label>
-                            <Field name="fecha" type="date" maxDate={new Date()} required />
+                            <Field name="fecha" type="date" required />
                             {errors.fecha && touched.fecha ?
                                 (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.fecha}</small>) : null}
                         </div>

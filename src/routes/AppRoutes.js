@@ -8,6 +8,7 @@ import {
 import AddForm from '../components/AddForm';
 import Dashboard from '../components/Dashboard';
 import List from '../components/List';
+// import ListCustomize from '../components/ListCustomize';
 import NavBar from '../components/NavBar';
 
 const AppRoutes = () => {
