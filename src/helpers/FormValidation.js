@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 //validar cantidad de caracteres, tipo y agregar mensaje de error
 const tooLong = (field) => `El ${field} excede el máximo de caracteres.`
 const tooShort = (field) => `El ${field} es muy corto.`
-const requiredField = (field) => `El campo ${field} es obligatorio.`
+const requiredField = (field, noun = 'El') => `${noun} ${field} es obligatorio.`
 
 export const SignupSchema = Yup.object().shape({
     nombre: Yup.string()
@@ -17,7 +17,7 @@ export const SignupSchema = Yup.object().shape({
         .required(requiredField('Apellido')),
 
     fecha: Yup.date()
-        .required(requiredField('Fecha de nacimiento'))
+        .required(requiredField('Fecha de nacimiento', 'La'))
         .max(new Date(), 'Fecha invalida'),
 
     telefono: Yup.string()

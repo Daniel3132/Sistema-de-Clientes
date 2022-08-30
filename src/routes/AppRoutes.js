@@ -8,7 +8,7 @@ import {
 import AddForm from '../components/AddForm';
 import Dashboard from '../components/Dashboard';
 import List from '../components/List';
-// import ListCustomize from '../components/ListCustomize';
+import ListCustomize from '../components/ListCustomize';
 import NavBar from '../components/NavBar';
 
 const AppRoutes = () => {
@@ -18,8 +18,9 @@ const AppRoutes = () => {
                 <NavBar />
                 <Routes>
                     <Route path='/' element={<AddForm />} />
-                    <Route path='/reporte' element={<Dashboard />} />
-                    <Route path='/tabla-clientes' element={<List />} />
+                    {/* <Route path='/reporte' element={<Dashboard />} /> */}
+                    {/* <Route path='/tabla-clientes' element={<List />} /> */}
+                    <Route path='/tabla-custom' element={<ListCustomize />} />
                     <Route path='*' element={<Navigate to="/" />} />
                 </Routes>
             </BrowserRouter>
