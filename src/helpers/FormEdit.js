@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Formik, Form, Field } from 'formik';
 import '../styles/addForm.scss'
-import { SignupSchema } from '../helpers/FormValidation';
+import { SignupSchema } from './FormValidation';
 import { url } from './api';
 import Swal from 'sweetalert2';
 
-const FormEdit = ({ cliente }) => {
+const FormEdit = ({ cliente, setRender, Render }) => {
 
     const [Cliente] = useState(cliente)
 
@@ -15,7 +15,7 @@ const FormEdit = ({ cliente }) => {
             method: 'PUT',
             body: JSON.stringify(values),
             headers: { 'Content-Type': 'application/json; charset=utf-8' }
-        });
+        })
         //Alerta de agregado
         Swal.fire({
             position: 'center',
@@ -23,7 +23,7 @@ const FormEdit = ({ cliente }) => {
             title: `Registro de ${values.nombre} actualizado `,
             showConfirmButton: false,
             timer: 1500
-        });
+        }).then(window.location.reload());;
     }
 
     return (

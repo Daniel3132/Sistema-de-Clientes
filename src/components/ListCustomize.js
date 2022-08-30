@@ -9,10 +9,12 @@ const ListCustomize = () => {
 
   //estado con el array de los clientes
   const [Clientes, setClientes] = useState([]);
-  const [ClientesFiltrados, setClientesFiltrados] = useState([]);
+  const [ClientesFiltrados, setClientesFiltrados] = useState(Clientes);
   const [EditData, setEditData] = useState([]);
   const [Modal, setModal] = useState(false);
   const [Busqueda, setBusqueda] = useState('');
+  const [Render, setRender] = useState(false);
+
 
   useEffect(() => {
     //obtener los datos y ponerlos en el estado
@@ -21,7 +23,8 @@ const ListCustomize = () => {
       setClientesFiltrados(await getData())
     }
     get()
-  }, [])
+    console.log('render');
+  }, [Render])
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -41,7 +44,8 @@ const ListCustomize = () => {
         condition(c.correo)
       );
       setClientesFiltrados(filtro)
-    } else {
+    }
+    else {
       setClientesFiltrados(Clientes)
     }
   }
@@ -65,12 +69,12 @@ const ListCustomize = () => {
           method: 'DELETE'
         }).then(response => {
           console.log(response)
+          setRender(!Render)
           Swal.fire(
             'Eliminado!',
             'El cliente ha sido eliminado',
             'success'
           )
-          window.location.reload()
         }).catch(error => {
           console.log(error);
           Swal.fire(
@@ -139,7 +143,7 @@ const ListCustomize = () => {
               Modal ?
                 <div className='modalCustom'>
                   <button onClick={() => setModal(false)} >X</button>
-                  <FormEdit cliente={EditData} />
+                  <FormEdit cliente={EditData} setRender={setRender} Render={Render} />
                 </div>
                 : null
             }
