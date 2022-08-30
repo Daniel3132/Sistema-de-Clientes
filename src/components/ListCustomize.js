@@ -7,24 +7,21 @@ import '../styles/list.scss'
 
 const ListCustomize = () => {
 
-  //estado con el array de los clientes
-  const [Clientes, setClientes] = useState([]);
-  const [ClientesFiltrados, setClientesFiltrados] = useState(Clientes);
-  const [EditData, setEditData] = useState([]);
-  const [Modal, setModal] = useState(false);
-  const [Busqueda, setBusqueda] = useState('');
-  const [Render, setRender] = useState(false);
+  const [Clientes, setClientes] = useState([]); //Clientes obtenidos de la api 
+  const [ClientesFiltrados, setClientesFiltrados] = useState([]); //Copia de los clientes para filtrarlos sin perderlos en la tabla
+  const [EditData, setEditData] = useState([]);  //Info del cliente enviada al modal de editar
+  const [Modal, setModal] = useState(false);  //abrir y cerrar el modal
+  const [Busqueda, setBusqueda] = useState('');   //controlar el input de busqueda
 
+  //obtener los datos y ponerlos en el estado
+  const get = async () => {
+    setClientes(await getData())
+    setClientesFiltrados(await getData())
+  }
 
   useEffect(() => {
-    //obtener los datos y ponerlos en el estado
-    const get = async () => {
-      setClientes(await getData())
-      setClientesFiltrados(await getData())
-    }
     get()
-    console.log('render');
-  }, [Render])
+  }, [])
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -69,7 +66,7 @@ const ListCustomize = () => {
           method: 'DELETE'
         }).then(response => {
           console.log(response)
-          setRender(!Render)
+          get()
           Swal.fire(
             'Eliminado!',
             'El cliente ha sido eliminado',
@@ -143,15 +140,13 @@ const ListCustomize = () => {
               Modal ?
                 <div className='modalCustom'>
                   <button onClick={() => setModal(false)} >X</button>
-                  <FormEdit cliente={EditData} setRender={setRender} Render={Render} />
+                  <FormEdit cliente={EditData} get={get} />
                 </div>
                 : null
             }
           </>
           :
-          <div className="spinner-grow text-danger" style={{ width: "7rem", height: "7rem" }} role="status">
-            <span className="sr-only">Loading...</span>
-          </div>
+          <div className="custom-loader"></div>
       }
     </section>
   )

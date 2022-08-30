@@ -23,7 +23,6 @@ const AddForm = () => {
             showConfirmButton: false,
             timer: 1500
         });
-
     }
 
     return (
@@ -48,14 +47,14 @@ const AddForm = () => {
                             <label htmlFor="nombre">Nombre:</label>
                             <Field name="nombre" type="text" required />
                             {errors.nombre && touched.nombre ?
-                                (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.nombre}</small>) : null}
+                                (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.nombre}</small>) : null}
                         </div>
 
                         <div>
                             <label htmlFor="apellido">Apellido:</label>
                             <Field name="apellido" type="text" required />
                             {errors.apellido && touched.apellido ?
-                                (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.apellido}</small>) : null}
+                                (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.apellido}</small>) : null}
 
                         </div>
 
@@ -63,21 +62,21 @@ const AddForm = () => {
                             <label htmlFor="telefono">Telefono:</label>
                             <Field name="telefono" type="number" required />
                             {errors.telefono && touched.telefono ?
-                                (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.telefono}</small>) : null}
+                                (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.telefono}</small>) : null}
                         </div>
 
                         <div>
                             <label htmlFor="correo">Correo electronico:</label>
                             <Field name="correo" type="email" required />
                             {errors.correo && touched.correo ?
-                                (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.correo}</small>) : null}
+                                (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.correo}</small>) : null}
                         </div>
 
                         <div>
                             <label htmlFor="fecha">Fecha de nacimiento:</label>
                             <Field name="fecha" type="date" required />
                             {errors.fecha && touched.fecha ?
-                                (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.fecha}</small>) : null}
+                                (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.fecha}</small>) : null}
                         </div>
 
                         <div className='buttons'>

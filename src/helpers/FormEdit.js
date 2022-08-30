@@ -5,7 +5,7 @@ import { SignupSchema } from './FormValidation';
 import { url } from './api';
 import Swal from 'sweetalert2';
 
-const FormEdit = ({ cliente, setRender, Render }) => {
+const FormEdit = ({ cliente, get }) => {
 
     const [Cliente] = useState(cliente)
 
@@ -16,6 +16,7 @@ const FormEdit = ({ cliente, setRender, Render }) => {
             body: JSON.stringify(values),
             headers: { 'Content-Type': 'application/json; charset=utf-8' }
         })
+        .then(reponse => {console.log(reponse); get() })
         //Alerta de agregado
         Swal.fire({
             position: 'center',
@@ -23,7 +24,7 @@ const FormEdit = ({ cliente, setRender, Render }) => {
             title: `Registro de ${values.nombre} actualizado `,
             showConfirmButton: false,
             timer: 1500
-        }).then(window.location.reload());;
+        });      
     }
 
     return (
@@ -68,21 +69,21 @@ const FormEdit = ({ cliente, setRender, Render }) => {
                                 <label htmlFor="telefono">Telefono:</label>
                                 <Field name="telefono" type="number" required />
                                 {errors.telefono && touched.telefono ?
-                                    (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.telefono}</small>) : null}
+                                    (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.telefono}</small>) : null}
                             </div>
 
                             <div>
                                 <label htmlFor="correo">Correo electronico:</label>
                                 <Field name="correo" type="email" required />
                                 {errors.correo && touched.correo ?
-                                    (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.correo}</small>) : null}
+                                    (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.correo}</small>) : null}
                             </div>
 
                             <div>
                                 <label htmlFor="fecha">Fecha de nacimiento:</label>
                                 <Field name="fecha" type="date" required />
                                 {errors.fecha && touched.fecha ?
-                                    (<small className='errorMessage'><span class="fa fa-circle-exclamation mx-1"></span>{errors.fecha}</small>) : null}
+                                    (<small className='errorMessage'><span className="fa fa-circle-exclamation mx-1"></span>{errors.fecha}</small>) : null}
                             </div>
                             <button className='btnLimpiar' onClick={handleReset}>Restablecer campos</button>
                         </div>
